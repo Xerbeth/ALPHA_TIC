@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.AlphaTIC.Services", "Domain.AlphaTIC.Services\Domain.AlphaTIC.Services.csproj", "{679BED5D-FAAA-4D9C-A603-24D46A27B385}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.AlphaTIC.BussinesLayer", "Domain.AlphaTIC.BussinesLayer\Domain.AlphaTIC.BussinesLayer.csproj", "{22B54FB1-6B07-4CDC-BCBB-7292320DE1C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.AlphaTIC.DAL", "Domain.AlphaTIC.DAL\Domain.AlphaTIC.DAL.csproj", "{3FF25302-7298-4FC3-833B-B274EFE463BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.AlphaTIC.Common", "Domain.AlphaTIC.Common\Domain.AlphaTIC.Common.csproj", "{ADC0D01F-9E69-42F0-88FB-A02386836FB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.AlphaTIC.Utils", "Domain.AlphaTIC.Utils\Domain.AlphaTIC.Utils.csproj", "{E8175DF3-F7B8-48A3-936C-8F350F19CF76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaTIC.API", "AlphaTIC.API\AlphaTIC.API.csproj", "{9BD44A5D-1435-4DA4-87E0-A89037E13CCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{679BED5D-FAAA-4D9C-A603-24D46A27B385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679BED5D-FAAA-4D9C-A603-24D46A27B385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679BED5D-FAAA-4D9C-A603-24D46A27B385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{679BED5D-FAAA-4D9C-A603-24D46A27B385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B54FB1-6B07-4CDC-BCBB-7292320DE1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B54FB1-6B07-4CDC-BCBB-7292320DE1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B54FB1-6B07-4CDC-BCBB-7292320DE1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B54FB1-6B07-4CDC-BCBB-7292320DE1C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF25302-7298-4FC3-833B-B274EFE463BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF25302-7298-4FC3-833B-B274EFE463BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF25302-7298-4FC3-833B-B274EFE463BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF25302-7298-4FC3-833B-B274EFE463BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADC0D01F-9E69-42F0-88FB-A02386836FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADC0D01F-9E69-42F0-88FB-A02386836FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC0D01F-9E69-42F0-88FB-A02386836FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADC0D01F-9E69-42F0-88FB-A02386836FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8175DF3-F7B8-48A3-936C-8F350F19CF76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8175DF3-F7B8-48A3-936C-8F350F19CF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8175DF3-F7B8-48A3-936C-8F350F19CF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8175DF3-F7B8-48A3-936C-8F350F19CF76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD44A5D-1435-4DA4-87E0-A89037E13CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD44A5D-1435-4DA4-87E0-A89037E13CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD44A5D-1435-4DA4-87E0-A89037E13CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD44A5D-1435-4DA4-87E0-A89037E13CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FD90851-BC50-4F6D-A8DB-C5504D243929}
+	EndGlobalSection
+EndGlobal
