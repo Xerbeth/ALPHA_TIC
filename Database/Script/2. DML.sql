@@ -193,3 +193,21 @@ CREATE TABLE develop.db_erros
           ErrorMessage   VARCHAR(MAX),
           ErrorDateTime  DATETIME)
 GO
+
+/* Creación de tabla para la auditoria a nivel de Triggers para la tabla Correspondence */
+CREATE TABLE develop.AuditData
+(Id INT,
+ Description VARCHAR (100),	
+ Consecutive VARCHAR(10),
+ Type_Correspondence VARCHAR(50),
+ Sender_Id INT,
+ Addressee_Id INT,
+ Creation_Date DATETIME,	
+ Creator_Person  INT,	
+ Modifier_Date DATETIME,	
+ Modifier_Person  INT,	
+ Registration_Status VARCHAR(20),
+ Date_Insert_Modify DATETIME, 
+ Type_Mov           VARCHAR(25)
+);
+GO
