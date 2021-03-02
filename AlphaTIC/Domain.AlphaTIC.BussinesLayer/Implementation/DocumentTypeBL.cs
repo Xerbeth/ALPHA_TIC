@@ -36,7 +36,7 @@ namespace Domain.AlphaTIC.BussinesLayer.Implementation
         /// </summary>
         /// <returns> Objecto transacción con el resultado de la consulta </returns>
         public TransactionDto<List<DocumentTypeDto>> GetListDocumentType()
-        {
+        {            
             TransactionDto<List<DocumentTypeDto>> transaction = new TransactionDto<List<DocumentTypeDto>>();
             transaction.Data = new List<DocumentTypeDto>();
             try

@@ -7,7 +7,7 @@ namespace Domain.AlphaTIC.Common.Models
     /// <summary>
     /// Clase modelo de la entidad DocumentType de la base de datos
     /// </summary>
-    public class DocumentTypeModel
+    public class DocumentTypeModel : AuditModel
     {
         #region Propiedades
         /// <summary>
@@ -25,27 +25,7 @@ namespace Domain.AlphaTIC.Common.Models
         /// <summary>
         /// Descripción del tipo de documento
         /// </summary>
-        public string Description { get; set; }
-        /// <summary>
-        /// Fecha de creación del registro
-        /// </summary>
-        public DateTime CreationDate { get; set; }
-        /// <summary>
-        /// Persona creadora del registro
-        /// </summary>
-        public int CreatorPerson { get; set; }
-        /// <summary>
-        /// Fecha última modificación del registro
-        /// </summary>
-        public DateTime? ModifierDate { get; set; }
-        /// <summary>
-        /// Persona última modificación del registro
-        /// </summary>
-        public int? ModifiesPerson { get; set; }
-        /// <summary>
-        /// Estado del registro; Activo o Inactivo
-        /// </summary>
-        public string RegistrationStatus { get; set; }
+        public string Description { get; set; }        
         #endregion Propiedades
 
         #region Métodos 

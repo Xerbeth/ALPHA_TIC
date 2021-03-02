@@ -11,6 +11,7 @@ namespace Domain.AlphaTIC.Services
         public static void ConfigureServices(IServiceCollection services, string connectionString)
         {
             services.AddScoped<IDocumentTypeRepository, DocumentTypeRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
         }
     }
 }

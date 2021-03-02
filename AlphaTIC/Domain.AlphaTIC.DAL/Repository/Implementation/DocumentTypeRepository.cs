@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 namespace Domain.AlphaTIC.DAL.Repository.Implementation
 {
     /// <summary>
-    /// Clase para la impleentación de los métodos de operación expuestos para el acceso a la Base de datos de la entidad DocumentType
+    /// Clase para la implementación de los métodos de operación expuestos para el acceso a la Base de datos de la entidad DocumentType
     /// </summary>
     public class DocumentTypeRepository : IDocumentTypeRepository
     {
@@ -35,7 +35,7 @@ namespace Domain.AlphaTIC.DAL.Repository.Implementation
         List<DocumentTypeModel> IDocumentTypeRepository.GetListDocumentType()
         {
             List<DocumentTypeModel> listDocumentTypeModel = new List<DocumentTypeModel>();
-            string queryString = "SELECT * FROM develop.Document_Type;";
+            string queryString = "SELECT * FROM develop.Document_Type WHERE Registration_Status = 'Activo';";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);

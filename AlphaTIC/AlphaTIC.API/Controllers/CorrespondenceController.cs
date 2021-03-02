@@ -10,12 +10,12 @@ namespace AlphaTIC.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class DocumentTypeController : ControllerBase
+    public class CorrespondenceController : ControllerBase
     {
-        private readonly ILogger<DocumentTypeController> _logger;
+        private readonly ILogger<CorrespondenceController> _logger;
         private readonly IDocumentTypeServices _documentTypeServices;
 
-        public DocumentTypeController(ILogger<DocumentTypeController> logger, 
+        public CorrespondenceController(ILogger<CorrespondenceController> logger, 
                                       IDocumentTypeServices documentTypeServices)
         {
             _logger = logger;
@@ -26,7 +26,7 @@ namespace AlphaTIC.API.Controllers
         /// Método para obtener la lista de los tipos de documento
         /// </summary>
         /// <returns> LIsta de tipos de documentos </returns>
-        [HttpGet("GetListDocumentType")]
+        [HttpGet("InsCorrespondence")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

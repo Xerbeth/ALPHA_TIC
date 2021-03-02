@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain.AlphaTIC.Common\Domain.AlphaTIC.Common.csproj" />
     <ProjectReference Include="..\Domain.AlphaTIC.Services\Domain.AlphaTIC.Services.csproj" />
+    <ProjectReference Include="..\Domain.AlphaTIC.Utils\Domain.AlphaTIC.Utils.csproj" />
   </ItemGroup>
 
 

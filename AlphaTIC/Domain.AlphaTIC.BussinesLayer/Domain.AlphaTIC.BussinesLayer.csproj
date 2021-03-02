@@ -5,12 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Implementation\PersonBL.cs~RF6180ab07.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain.AlphaTIC.Common\Domain.AlphaTIC.Common.csproj" />
     <ProjectReference Include="..\Domain.AlphaTIC.DAL\Domain.AlphaTIC.DAL.csproj" />
+    <ProjectReference Include="..\Domain.AlphaTIC.Utils\Domain.AlphaTIC.Utils.csproj" />
   </ItemGroup>
 
 </Project>
