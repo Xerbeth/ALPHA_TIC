@@ -34,6 +34,10 @@ namespace Domain.AlphaTIC.Common.Data_Transfer_Object
         /// Identificador de la persona destinataria
         /// </summary>
         public int AddresseeId { get; set; }
+        /// <summary>
+        /// Propiedad para los archivos subidos temporalmente
+        /// </summary>
+        public CorrespondenceFilesDto CorrespondenceFiles { get; set; }
         #endregion Propiedades
 
         #region Métodos

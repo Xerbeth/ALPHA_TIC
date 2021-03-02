@@ -33,6 +33,7 @@ namespace AlphaTIC.API
             services.AddScoped<IDocumentTypeServices, DocumentTypeServices>();
             services.AddScoped<IPersonServices, PersonServices>();
             services.AddScoped<ICorrespondenceServices, CorrespondenceServices>();
+            services.AddScoped<ICorrespondenceFilesServices, CorrespondenceFilesServices>();
             StartupServices.ConfigureServices(services, connectionString);
 
             services.AddControllers();

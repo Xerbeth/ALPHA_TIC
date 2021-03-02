@@ -1,4 +1,5 @@
 ﻿#region Referencias
+using Domain.AlphaTIC.Common.Data_Transfer_Object;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,13 +37,20 @@ namespace Domain.AlphaTIC.Common.Models
         /// Identificador de la persona destinataria
         /// </summary>
         public int AddresseeId { get; set; }
+        /// <summary>
+        /// Propiedad de referencias al modelo de CorrespondenceFiles
+        /// </summary>
+        public CorrespondenceFilesModel CorrespondenceFiles { get; set; }
         #endregion Propiedades
 
         #region Métodos
         /// <summary>
         /// Método constructor
         /// </summary>
-        public CorrespondenceModel() { }
+        public CorrespondenceModel() 
+        {
+            CorrespondenceFiles = new CorrespondenceFilesModel();
+        }
         #endregion Métodos
     }
 }

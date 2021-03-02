@@ -1,4 +1,5 @@
 ﻿#region Referencias
+using Domain.AlphaTIC.Common.Data_Transfer_Object;
 using Domain.AlphaTIC.Common.Models;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,10 @@ namespace Domain.AlphaTIC.DAL.Repository.Interfaces
         /// <param name="person"> Entidad persona </param>
         /// <returns> Bandera de creación del usuario </returns>
         public bool InsCorrespondence(CorrespondenceModel correspondence);
+        /// <summary>
+        /// Método para consultar la vista ViewCorrespondence
+        /// </summary>
+        /// <returns> Lista de resultados de consultar vista </returns>
+        public List<CorrespondenceViewDto> GetViewCorrespondence();
     }
 }

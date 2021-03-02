@@ -18,5 +18,10 @@ namespace Domain.AlphaTIC.Services.Interfaces
         /// <param name="correspondence"> Objeto con la información de la correspondencia a registrar </param>
         /// <returns> Objeto de la transacción </returns>
         public TransactionDto<bool> InsCorrespondence(CorrespondenceDto correspondence);
+        /// <summary>
+        /// Métod para consultar la vista de correspondence
+        /// </summary>
+        /// <returns> Objeto de la transacción </returns>
+        public TransactionDto<List<CorrespondenceViewDto>> GetViewCorrespondence();
     }
 }

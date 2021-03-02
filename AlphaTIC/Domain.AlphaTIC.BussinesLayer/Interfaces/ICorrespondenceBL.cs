@@ -18,5 +18,10 @@ namespace Domain.AlphaTIC.BussinesLayer.Interfaces
         /// <param name="correspondence"> Objeto con la información de la correspondencia a registrar </param>
         /// <returns> Objeto de la transacción </returns>
         public TransactionDto<bool> InsCorrespondence(CorrespondenceDto correspondence);
+        /// <summary>
+        /// Método para consultar la vista ViewCorrespondence
+        /// </summary>
+        /// <returns> Lista de resultados de consultar vista </returns>
+        public TransactionDto<List<CorrespondenceViewDto>> GetViewCorrespondence();
     }
 }

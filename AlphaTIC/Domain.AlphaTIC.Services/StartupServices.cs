@@ -13,6 +13,7 @@ namespace Domain.AlphaTIC.Services
             services.AddScoped<IDocumentTypeBL, DocumentTypeBL>();
             services.AddScoped<IPersonBL, PersonBL>();
             services.AddScoped<ICorrespondenceBL, CorrespondenceBL>();
+            services.AddScoped<ICorrespondenceFilesBL, CorrespondenceFilesBL>();
             StartupBusinessLayer.ConfigureServices(services, connectionString);
         }
     }

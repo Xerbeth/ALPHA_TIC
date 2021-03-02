@@ -5,6 +5,7 @@ using Domain.AlphaTIC.Common.Models;
 using Domain.AlphaTIC.DAL.Repository.Interfaces;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
 #endregion Referencias
@@ -37,6 +38,51 @@ namespace Domain.AlphaTIC.BussinesLayer.Implementation
         }
 
         /// <summary>
+        /// Métod para consultar la vista de correspondence
+        /// </summary>
+        /// <returns> Objeto de la transacción </returns>
+        public TransactionDto<List<CorrespondenceViewDto>> GetViewCorrespondence()
+        {
+            TransactionDto<List<CorrespondenceViewDto>> transaction = new TransactionDto<List<CorrespondenceViewDto>>();
+            transaction.Data = new List<CorrespondenceViewDto>();
+            try
+            {
+                string _class = MethodBase.GetCurrentMethod().ReflectedType.Name;
+                string _method = MethodBase.GetCurrentMethod().Name;
+                _logger.LogInformation("Acceso al " + _class + "/" + _method);
+
+                var getViewCorrespondence = _correspondenceRepository.GetViewCorrespondence();
+                if (getViewCorrespondence.Count == 0)
+                {
+                    transaction.Message = "No existen registros en la vista.";
+                    return transaction;
+                }
+                foreach (var item in getViewCorrespondence)
+                {
+                    CorrespondenceViewDto correspondenceView = new CorrespondenceViewDto();
+                    correspondenceView.Description = item.Description;
+                    correspondenceView.Consecutive = item.Consecutive;
+                    correspondenceView.Type_Correspondence = item.Type_Correspondence;
+                    correspondenceView.Sender = item.Sender;
+                    correspondenceView.Addressee = item.Addressee;
+                    correspondenceView.ReceptionDate = item.ReceptionDate;
+                    correspondenceView.FileName = item.FileName;
+                    correspondenceView.File = item.File;
+                    transaction.Data.Add(correspondenceView);
+                }
+                transaction.Message = "Datos consultados correctamente.";
+                transaction.Status = Status.Success;
+            }
+            catch (ArgumentException ex)
+            {
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+
+        }
+
+        /// <summary>
         /// Método para registrar persona
         /// </summary>
         /// <param name="person"> Objeto con la información de la persona a registrar </param>
@@ -49,7 +95,7 @@ namespace Domain.AlphaTIC.BussinesLayer.Implementation
             {
                 string _class = MethodBase.GetCurrentMethod().ReflectedType.Name;
                 string _method = MethodBase.GetCurrentMethod().Name;
-                _logger.LogInformation("Acceso al " + _class +"/"+ _method + " con los siguientes parametros: " + JsonSerializer.Serialize(correspondence));
+                _logger.LogInformation("Acceso al " + _class + "/" + _method + " con los siguientes parametros: " + JsonSerializer.Serialize(correspondence));
                 CorrespondenceModel correspondenceModel = new CorrespondenceModel();
                 correspondenceModel.Description = correspondence.Description;
                 correspondenceModel.TypeCorrespondence = correspondence.TypeCorrespondence;
@@ -57,6 +103,12 @@ namespace Domain.AlphaTIC.BussinesLayer.Implementation
                 correspondenceModel.AddresseeId = correspondence.AddresseeId;
                 correspondenceModel.CreatorPerson = correspondence.CreatorPerson;
                 correspondenceModel.CreationDate = DateTime.Now;
+
+                correspondenceModel.CorrespondenceFiles.Name = correspondence.CorrespondenceFiles.Name;
+                correspondenceModel.CorrespondenceFiles.FileType = correspondence.CorrespondenceFiles.FileType;
+                correspondenceModel.CorrespondenceFiles.FilePath = correspondence.CorrespondenceFiles.FilePath;
+                correspondenceModel.CorrespondenceFiles.CreatorPerson = correspondence.CreatorPerson;
+
 
                 var insCorrespondence = _correspondenceRepository.InsCorrespondence(correspondenceModel);
                 if (!insCorrespondence)

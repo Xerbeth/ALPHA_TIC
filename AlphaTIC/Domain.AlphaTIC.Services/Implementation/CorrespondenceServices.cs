@@ -36,6 +36,15 @@ namespace Domain.AlphaTIC.Services.Implementation
         {
             return _correspondenceBL.InsCorrespondence(correspondence);
         }
+
+        /// <summary>
+        /// Métod para consultar la vista de correspondence
+        /// </summary>
+        /// <returns> Objeto de la transacción </returns>
+        public TransactionDto<List<CorrespondenceViewDto>> GetViewCorrespondence()
+        {
+            return _correspondenceBL.GetViewCorrespondence();
+        }
         #endregion Métodos
     }
 }

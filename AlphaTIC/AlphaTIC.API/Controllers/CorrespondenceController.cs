@@ -8,6 +8,9 @@ using Microsoft.Extensions.Logging;
 
 namespace AlphaTIC.API.Controllers
 {
+    /// <summary>
+    /// Endpoint sobre la entidades de Correspondence
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class CorrespondenceController : ControllerBase
@@ -23,9 +26,10 @@ namespace AlphaTIC.API.Controllers
         }
 
         /// <summary>
-        /// Método para obtener la lista de los tipos de documento
+        /// Método para registrar la correspondencia 
         /// </summary>
-        /// <returns> Resulta de la transacción </returns>
+        /// <param name="correspondence"> Objeto para el registro de la correspondencia </param>
+        /// <returns> Resultado de la trasacción </returns>
         [HttpPost("InsCorrespondence")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -42,6 +46,41 @@ namespace AlphaTIC.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError("Ocurrió un error en "+ context + ".Error: "+ ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, new ErrorAnswerDto()
+                {
+                    State = StatusCodes.Status400BadRequest,
+                    Mistakes = new List<ErrorDto>(new[]
+                    {
+                         new ErrorDto()
+                         {
+                             Code = "",
+                             Description = ex.Message
+                         }
+                     })
+                });
+            }
+        }
+
+        /// <summary>
+        /// Método para obtener la lista de los tipos de documento
+        /// </summary>
+        /// <returns> LIsta de tipos de documentos </returns>
+        [HttpGet("GetViewCorrespondence")]
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult GetViewCorrespondence()
+        {
+            string context = ControllerContext.HttpContext.Request.Path.Value;
+            try
+            {
+                _logger.LogInformation("Acceso al " + context);
+                return Ok(_correspondenceServices.GetViewCorrespondence());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Ocurrió un error en " + context + ".Error: " + ex.Message);
                 return StatusCode(StatusCodes.Status400BadRequest, new ErrorAnswerDto()
                 {
                     State = StatusCodes.Status400BadRequest,
