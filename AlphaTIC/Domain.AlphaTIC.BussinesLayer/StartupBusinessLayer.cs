@@ -12,6 +12,7 @@ namespace Domain.AlphaTIC.Services
         {
             services.AddScoped<IDocumentTypeRepository, DocumentTypeRepository>();
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<ICorrespondenceRepository, CorrespondenceRepository>();
         }
     }
 }

@@ -13,31 +13,31 @@ namespace AlphaTIC.API.Controllers
     public class CorrespondenceController : ControllerBase
     {
         private readonly ILogger<CorrespondenceController> _logger;
-        private readonly IDocumentTypeServices _documentTypeServices;
+        private readonly ICorrespondenceServices  _correspondenceServices;
 
-        public CorrespondenceController(ILogger<CorrespondenceController> logger, 
-                                      IDocumentTypeServices documentTypeServices)
+        public CorrespondenceController(ILogger<CorrespondenceController> logger,
+                                      ICorrespondenceServices correspondenceServices)
         {
             _logger = logger;
-            _documentTypeServices = documentTypeServices;
+            _correspondenceServices = correspondenceServices;
         }
 
         /// <summary>
         /// Método para obtener la lista de los tipos de documento
         /// </summary>
-        /// <returns> LIsta de tipos de documentos </returns>
-        [HttpGet("InsCorrespondence")]
+        /// <returns> Resulta de la transacción </returns>
+        [HttpPost("InsCorrespondence")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult GetListDocumentType()
+        public ActionResult InsCorrespondence(CorrespondenceDto correspondence)
         {
             string context = ControllerContext.HttpContext.Request.Path.Value;
             try
             {
                 _logger.LogInformation("Acceso al " + context);
-                return Ok(_documentTypeServices.GetListDocumentType());
+                return Ok(_correspondenceServices.InsCorrespondence(correspondence));
             }
             catch (Exception ex)
             {

@@ -32,6 +32,7 @@ namespace AlphaTIC.API
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddScoped<IDocumentTypeServices, DocumentTypeServices>();
             services.AddScoped<IPersonServices, PersonServices>();
+            services.AddScoped<ICorrespondenceServices, CorrespondenceServices>();
             StartupServices.ConfigureServices(services, connectionString);
 
             services.AddControllers();
