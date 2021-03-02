@@ -146,7 +146,7 @@ CREATE TABLE develop.Role_Persons(
 CREATE TABLE develop.Correspondence(
     Id INT PRIMARY KEY IDENTITY (1, 1),
 	Description VARCHAR (100) NULL,	
-	Consecutive INT NOT NULL,
+	Consecutive VARCHAR(10) NOT NULL,
 	Type_Correspondence VARCHAR(50) NOT NULL,
 	Sender_Id INT NOT NULL,
 	Addressee_Id INT NOT NULL,
@@ -180,3 +180,16 @@ CREATE TABLE develop.Correspondence_Files(
 	FOREIGN KEY (Modifier_Person) REFERENCES develop.Person (Id),
 	CONSTRAINT Registration_Status_Correspondence_Files CHECK (Registration_Status = 'Activo' OR Registration_Status ='Inactivo')
 );
+
+/* Tabla para el control de errores en la base de datos */
+CREATE TABLE develop.db_erros
+         (ErrorID        INT IDENTITY(1, 1),
+          UserName       VARCHAR(100),
+          ErrorNumber    INT,
+          ErrorState     INT,
+          ErrorSeverity  INT,
+          ErrorLine      INT,
+          ErrorProcedure VARCHAR(MAX),
+          ErrorMessage   VARCHAR(MAX),
+          ErrorDateTime  DATETIME)
+GO
